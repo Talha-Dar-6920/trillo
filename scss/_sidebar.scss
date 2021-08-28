@@ -1,1 +1,52 @@
+//////////////////////////////////////////
+///SIDE NAVIGATION
+.side-nav {
+    margin-top: 2rem;
+    list-style: none;
+    &__item {
+        position: relative;
+        margin-top: .8rem;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 3px;
+            background-color: var(--color-1);
+            transform: scaleY(0);
+            transition: transform .2s, width .4s cubic-bezier(1, 0, 0, 1) .2s;
+        }
+        &:hover::before,
+        &--active::before {
+            transform: scaleY(1);
+            width: 100%;
+        }
+    }
+    &__link:visited,
+    &__link:link {
+        text-decoration: none;
+        color: var(--color-grey-l1);
+        display: block;
+        padding: 1.4rem 2rem;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+    }
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        margin-right: 1rem;
+        fill: currentColor;
+    }
+}
 
+//////////////////////////////////////////
+///LEGAL
+.legal {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.6rem;
+}
